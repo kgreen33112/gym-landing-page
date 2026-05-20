@@ -8,10 +8,10 @@ Visual hierarchy, focus expansion card effects, and setting the foundation for c
 ## Screenshots
 
 ### Landing Page
-![Gym Landing Page](./assets/screenshots/gym_landing_page.png)
+![Gym Landing Page](/assets/screenshots/gym_landing_page.png)
 
 ### Price Card Focus Expansion Effect
-![Price Card Expansion Effect](./assets/screenshots/card_effects.png)
+![Price Card Expansion Effect](/assets/screenshots/card_effects.png)
 
 ## Built With
 - HTML
