@@ -10,6 +10,7 @@ html, body {
   width: 100%;
   max-width: 100%;
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* Header Styles */
@@ -92,6 +93,7 @@ html, body {
   gap: 2rem;
   padding: 2rem;
   background-color: #FFF;
+  scroll-margin-top: 80px;
 }
 
 .left-content {
@@ -143,6 +145,7 @@ html, body {
   gap: 1rem;
   padding: 2rem;
   background-color: black;
+  scroll-margin-top: 175px;
 }
 
 .main-container {
@@ -201,6 +204,7 @@ html, body {
   gap: 1rem;
   padding: 2rem;
   background-color: white;
+  scroll-margin-top: 175px;
 }
 
 .about-us h1 {
@@ -228,6 +232,7 @@ html, body {
   gap: 1rem;
   padding: 2rem;
   background-color: black;
+  scroll-margin-top: 175px;
 }
 
 .pricing-section h1 {
