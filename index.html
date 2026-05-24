@@ -14,20 +14,22 @@
 <body>
     <header class="navigation-header">
         <div class="logo">
-            <img src="assets/dumbell_logo.png" width="150" height="150"alt="Forge Fitness Logo">
+            <img src="assets/Logo.svg" alt="Forge Fitness Logo">
         </div>
         <div class="header-title">
             <h1>Forge Fitness</h1>
         </div>
-        <div class="nav-links">
-            <span class="nav-link" id="home">Home</span>
-            <span class="nav-link" id="memberOption">Membership Options</span>
-            <span class="nav-link" id="aboutUs">About Us</span>
-        </div>
-        <div class="cta-button">
-                <button class="join-btn" id="joinBtn">Sign Up Now</button>
-            </a>
-        </div>
+        <button class="join-btn" id="joinBtn">Sign Up Now</button>
+        <button class="hamburger" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <ul class="nav-list">
+                <li id="home"><a href="#">Home</a></li>
+                <li id="memberOption"><a href="#">Memberships</a></li>
+                <li id="aboutUs"><a href="#">About Us</a></li>
+            </ul>
+        </nav>
     </header>
     <div class="hero" id="home-section">
         <div class="left-content">
@@ -44,7 +46,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="assets/Fitness1.jpg" width="520" height="300" alt="Woman lifting weights" />
+            <img src="assets/Fitness1.jpg" alt="Woman lifting weights" />
         </div>
     </div>
     <div class="membership-section" id="membership-options-section">
@@ -52,18 +54,18 @@
         <div class="main-container">
             <div class="membership-card">
                 <h2>Basic</h2>
-                <img src="assets/youth_jiu_jitsu.jpeg" width="300" height="200" alt="Youth Jiu Jitsu Class">
+                <img src="assets/youth_jiu_jitsu.jpeg" alt="Youth Jiu Jitsu Class">
                 <p>Perfect for beginners looking to get started with their fitness journey. Package includes 2 classes per week.</p>
             </div>
             <div class="membership-card">
                 <h2>All Access</h2>
-                <img src="assets/adult_jiu_jitsu.jpg" width="300" height="200" alt="Adult Jiu Jitsu">
+                <img src="assets/adult_jiu_jitsu.jpg" alt="Adult Jiu Jitsu">
                 <p>Perfect for dedicated fitness enthusiasts. Package includes unlimited classes and access to all facilities.</p>
             </div>
             <div class="membership-card">
                 <h2>Family</h2>
-                <img src="assets/family_fitness.jpg" width="300" height="200" alt="Family Fitness Class">
-                <p>Perfect for families looking to stay fit together. Package includes 4 classes per week for up to 4 family members.</p>
+                <img src="assets/family_fitness.jpg" alt="Family Fitness Class">
+                <p>Perfect for families looking to stay fit together. Package includes unlimited classes!</p>
             </div>
         </div>
     </div>
@@ -73,47 +75,27 @@
 We’re more than just a gym — we’re a community of people working together to improve our health, confidence, and mindset one workout at a time. No matter your experience level, our coaches meet you where you are and help you grow at your own pace.
 We celebrate progress over perfection and believe fitness should be sustainable, empowering, and fun.</p>
     </div>
-    <div class="pricing-section" id="pricingSection">
+    <div class="pricing-section">
         <h1>Pricing</h1>
-        <div class="outer-container">
-            <div class="container container1">
-                <div class="inner_container">
-                    <div class="title">Basic</div>
-                    <div class="container_text">
-                        <div class="main_number">$35</div>
-                        <div class="container_text">
-                            <div class="container_text1">per week</div>
-                        </div>
-                    </div>
-                </div>
-                <a><span>Sign Up Now</span></a>
+        <div class="pricing-card-container">
+            <div class="pricing-card">
+                <h2 class="title">Basic</h2>
+                <h3 class="price">$38<span>/week</span></h3>
+
+                <a href="#" class="btn">Sign Up Now</a>
+            </div>
+            <div class="pricing-card">
+                <h2 class="title">All-Access</h2>
+                <h3 class="price">$50<span>/week</span></h3>
+                <a href="#" class="btn">Sign Up Now</a>
+            </div>
+            <div class="pricing-card">
+                <h2 class="title">Familly</h2>
+                <h3 class="price">$65<span>/week</span></h3>
+
+                <a href="#" class="btn">Sign Up Now</a>
             </div>
         </div>
-        <div class="container container2 active">
-            <div class="inner_container">
-                <div class="title">All Access</div>
-                <div class="container_text">
-                    <div class="main_number">$50</div>
-                    <div class="container_text">
-                        <div class="container_text1">per week</div>
-                    </div>
-                </div>
-            </div>
-            <a><span>Sign Up Now</span></a>
-        </div>
-        <div class="container container3">
-            <div class="inner_container">
-                <div class="title">Family</div>
-                <div class="container_text">
-                    <div class="main_number">$65</div>
-                    <div class="container_text">
-                        <div class="container_text1">per week</div>
-                    </div>
-                </div>
-            </div>
-            <a><span>Sign Up Now</span></a>
-        </div>
-    </div>
-    <script src="app.js"></script>
+        <script src="script.js"></script>
 </body>
 </html>

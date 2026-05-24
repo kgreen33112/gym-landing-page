@@ -6,10 +6,9 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+html, body {
+  width: 100%;
+  max-width: 100%;
   font-family: 'Inter', sans-serif;
 }
 
@@ -17,68 +16,88 @@ body {
 .navigation-header {
   display: flex;
   align-items: center;
-  padding: 20px 40px;
+  justify-content: space-around;
+  padding: 1.5rem;
   background-color: #FFF;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
 }
 
+.logo img {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+}
+
 .header-title{
   font-family: 'Karantina', sans-serif;
   background-color: #FFF;
-  padding: 0 50px;
-  font-size: 24px;
+  padding: 0 1.4rem;
+  font-size: 1.5rem;
 }
 
-.nav-links {
+.hamburger {
+  display: none;
+}
+
+.nav-list {
   display: flex;
-  padding-left: 150px;
-  padding-right: 150px;
-  gap: 50px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  gap: 2rem;
   font-family: 'Inter', sans-serif;
-  background-color: #FFF;
+  background-color: #FFF; 
 }
 
-.nav-link {
+.nav-list li {
+  list-style-type: none;
+  transition: 0.3s ease;
+}
+
+.nav-list li:hover {
+  transform: scale(1.1);
+}
+
+.nav-list a {
   text-decoration: none;
   color: #333;
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 600;
-}
-
-.cta-button {
-  margin-left: auto;
-  padding: 10px 20px;
-  border-radius: 5px;
 }
 
 .join-btn {
   background-color: #000;
   color: #FFF;
-  border: none;
+  border: transparent;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   cursor: pointer;
-  gap: 10px;
-  padding: 10px 20px;
+  gap: 1rem;
+  padding: 1rem;
   border-radius: 8px;
+  transition: 0.3s ease;
 }
 
+.join-btn:hover {
+  background-color: #FFF;
+  color: #000;
+  border: 2px solid black;
+}
 /* Hero Section Styles */
 .hero {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 40px;
-  padding: 40px;
+  gap: 2rem;
+  padding: 2rem;
   background-color: #FFF;
 }
 
 .left-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
   justify-content: center;
 }
 
@@ -87,7 +106,7 @@ body {
   font-size: 36px;
   text-align: center;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .hero-text {
@@ -95,7 +114,7 @@ body {
   color: #000;
   font-family: 'Inter', sans-serif;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 1.5rem;
 }
 
 .sm-icons {
@@ -103,7 +122,7 @@ body {
   justify-content: center;
   font-size: 24px;
   color: #000;
-  gap: 20px;
+  gap: 1rem;
 }
 
 .hero-image {
@@ -111,13 +130,18 @@ body {
   justify-content: center;
 }
 
+.hero-image img {
+  width: 520px;
+  height: auto;
+}
+
 /* Membership Options Section */
 .membership-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 40px;
+  gap: 1rem;
+  padding: 2rem;
   background-color: black;
 }
 
@@ -125,7 +149,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 1rem;
   background-color: black;
 }
 
@@ -141,7 +165,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 30px;
+  padding: 1.5rem;
   border-radius: 8px;
   width: 400px;
   text-align: center;
@@ -151,18 +175,20 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: bold;
   font-size: 24px;
-  padding: 20px 0;
+  padding: 1rem;
 }
 
 .membership-card img {
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
+  width: 300px;
+  height: 200px;
 }
 
 .membership-card p {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 
 }
 
@@ -172,8 +198,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 40px;
+  gap: 1rem;
+  padding: 2rem;
   background-color: white;
 }
 
@@ -190,164 +216,514 @@ body {
   font-size: 18px;
   color: black;
   text-align: center;
-  max-width: 600px;
+  max-width: 50rem;
 }
 
 /* Pricing */
 .pricing-section {
-  background-color: #000;
-  width: 100%;
-  height: 500px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: black;
 }
 
-.outer-container {
-  margin: 100px auto 0 auto;
-  width: 300px;
+.pricing-section h1 {
+  font-family: 'Karantina', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 32px;
 }
 
-.container {
-  width: 200px;
-  height: 250px;
-  border-radius: 10px;
-  float: left;
+.pricing-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.pricing-card {
+  background-color: white;
+  max-width: 20rem;
+  padding: 2rem 3rem;
+  text-align: center;
+  margin: 0 2rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   position: relative;
-  top: 0;
-  z-index: 1;
-  box-shadow: 0 5px 10px 0px #00000020;
+  transition: 0.4s ease-in-out;
   cursor: pointer;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
 }
 
-.container1 {
-  background: #4967C3;
-  background: -webkit-linear-gradient(left top, #5967C3, #83cedc);
-  background: linear-gradient(to bottom right, #5967C3, #83cedc);
+.pricing-card:hover {
+  transform: scale(1.05)translateY(-10px);
 }
 
-.container2 {
-  background: #ffaec2;
-  background: -webkit-linear-gradient(left top, #ffaec2, #7e4aaf);
-  background: linear-gradient(to bottom right, #ffaec2, #7e4aaf);
-  margin-left: -50px;
-  z-index: 2;
+.pricing-card .title {
+  font-size: 2rem;
+  color: black;
 }
 
-.container3 {
-  background: #CA619C;
-  background: -webkit-linear-gradient(left top, #CA619C, #DBC084);
-  background: linear-gradient(to bottom right, #CA619C, #DBC084);
-  margin-left: -50px;
-}
-
-.active {
-  z-index: 3;
-  top: -25px;
-  height: 300px;
-}
-
-.title {
-  color: #FFF;
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.title::after {
-  content: '';
-  display: block;
-  width: 13px;
-  height: 3.5px;
-  background-color: #FFF;
-  margin: 5px auto 0 auto;
-}
-
-.main_number {
-  position: relative;
-  top: 75%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 5rem;
-  color: #FFFF;
-  opacity: 0.2;
+.pricing-card .price {
+  color: #6C6C6C;
   font-weight: 800;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  font-size: 2rem;
+  margin: 15px 0;
 }
 
-.main_number::before {
-  content: '';
-  font-size: 1.4rem;
-  position: absolute;
-  top: 40px;
-  left: 40px;
-}
-
-.active .main_number {
-  top: 45%;
-}
-
-.container a {
+.btn {
+  display: inline-block;
+  padding: 0.75rem 0;
+  background-color: #ADADAD;
+  color: white;
   text-decoration: none;
-  color: #3C385C;
-  font-weight: 800;
-  font-size: 0.7rem;
-  background-color: #FFF;
-  width: 170px;
-  line-height: 40px;
-  display: block;
-  border-radius: 30px;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  border-radius: 2rem;
+  border: 3px solid transparent;
+  font-size: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  font-weight: 500;
+  transition: 0.4s ease-in-out;
 }
 
-.container a span {
-  opacity: 0.6;
+.btn:hover {
+  background: white;
+  color: #6C6C6C;
+  border: 3px solid #6C6C6C;
 }
 
-.active a {
-  bottom: -20px;
+
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  /*Global*/  
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /*Header*/
+  .navigation-header {
+    flex-direction: row;
+    max-width: 100%;
+    padding: 1rem;
+    justify-content: space-around;
+  }
+
+  .logo img {
+    width: 40px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .header-title {
+    font-family: 'Karantina', sans-serif;
+    background-color: #FFF;
+    padding: 0 0.4rem;
+    font-size: 0.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1rem;
+    background: none;
+    color: #6C6C6C;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+    padding: 0.5rem;
+  }
+
+  .hamburger .active {
+    transform: translateX(-20px);
+  }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    left: auto;
+    width: min(250px, calc(100vw - 2rem));
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem;
+    background: #111;
+    border-radius: 12px;
+    list-style: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    z-index: 10;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-list li {
+    width: 100%;
+    font-size: 0.5rem;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+
+  .join-btn {
+    display: none;
+  }
+
+  /*Hero*/
+  .hero {
+    flex-direction: row;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    max-width: 100%;
+    justify-content: space-around;
+  }
+
+  .left-content {
+    gap: 0.25rem;
+  }
+
+  .hero-title {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+  }
+
+  .hero-text {
+    font-size: 0.4rem;
+    margin-bottom: 0.5rem;
+    max-width: 350px;
+  }
+
+  .sm-icons {
+    font-size: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .hero-image img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  /* Membership Options Section */
+  .membership-section {
+    gap: 0.25rem;
+    padding: 0.25rem;
+    max-width: 100%;
+  }
+
+  .main-container {
+    gap: 0.5rem;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .membership-section h1 {
+    font-size: 1rem;
+  }
+
+  .membership-card {
+    padding: 0.25rem;
+    width: 100%;
+    max-width: 150px;
+    align-items: center;
+  }
+
+  .membership-card h2 {
+    font-size: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  .membership-card img {
+    margin-bottom: 0.5rem;
+    width: 75px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .membership-card p {
+    font-size: 0.5rem;
+    margin-bottom: 0.25rem;
+    max-width: 150px;
+  }
+
+  /* About Us */
+  .about-us{
+    gap: 0.5rem;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .about-us h1 {
+    font-size: 1rem;
+  }
+
+  .about-us p {
+    font-size: 0.4rem;
+    max-width: 350px;
+  }
+
+  /* Pricing */
+  .pricing-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+
+  .pricing-section h1 {
+    font-size: 1rem;
+  }
+
+  .pricing-card-container {
+    max-width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .pricing-card {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin: 0 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .pricing-card:hover {
+    transform: scale(0.5)translateY(-10px);
+  }
+
+  .pricing-card .title {
+    font-size: 0.75rem;
+  }
+
+  .pricing-card .price {
+    font-size: 0.5rem;
+    margin: 8px 0;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.25rem 0;
+    border-radius: 0.25rem;
+    border: 3px solid transparent;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
 }
 
-.active a span {
-  opacity: 1;
-}
+@media screen and (max-width: 480px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .navigation-header {
+    flex-direction: row;
+    max-width: 100%;
+    position: relative;
+    padding: 0.5rem;
+    justify-content: center;
+  }
+  .logo img {
+    width: 40px;
+    max-width: 100%;
+    height: auto;
+  }
+  .header-title {
+    font-family: 'Karantina', sans-serif;
+    background-color: #FFF;
+    font-size: 0.5rem;
+  }
+  .hamburger {
+    display: block;
+    font-size: 1rem;
+    background: none;
+    color: #6C6C6C;
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    left: auto;
+    width: min(250px, calc(100vw - 2rem));
+    max-width: 280px;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem;
+    background: #111;
+    border-radius: 12px;
+    list-style: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    z-index: 10;
+  }
+  .nav-list.active {
+    display: flex;
+  }
+  .nav-list li {
+    width: 100%;
+    font-size: 0.5rem;
+  }
+  .nav-list a {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  .join-btn {
+    border-radius: 4px;
+    font-size: 0.5rem;
+    padding: 0.25rem;
+  }
+  /*Hero*/
+  .hero {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    max-width: 100%
+  } 
+  .left-content {
+    gap: 0.25rem;
+  }
+  .hero-title {
+    font-size: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 250px;
+  }
+  .hero-text {
+    font-size: 0.3rem;
+    margin-bottom: 0.5rem;
+    max-width: 250px;
+  }
+  .sm-icons {
+    font-size: 0.5rem;
+    gap: 0.5rem;
+  }
+  .hero-image img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+  }
+  /* Membership Options Section */
+  .membership-section {
+    gap: 0.25rem;
+    padding: 0.25rem;
+    max-width: 100%;
+  }
 
-.container_text {
-  position: absolute;
-  top: 75%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: #FFFF;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
+  .main-container {
+    gap: 0.25rem;
+    max-width: 100%;
+  }
 
-.active .container_text {
-  top: 65%;
-}
+  .membership-section h1 {
+    font-size: 1rem;
+  }
 
-.container_text span {
-  display: block;
-}
+  .membership-card {
+    padding: 0.75rem;
+    max-width: 100px;
+  }
 
-.container_text1 {
-  font-size: 0.9rem;
-}
+  .membership-card h2 {
+    font-size: 0.5rem;
+    padding: 0.25rem;
+  }
 
-.container_text2 {
-  font-size: 2.5rem;
+  .membership-card img {
+    margin-bottom: 0.5rem;
+    width: 75px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .membership-card p {
+    font-size: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  /* About Us */
+  .about-us{
+    gap: 0.5rem;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .about-us h1 {
+    font-size: 1rem;
+  }
+
+  .about-us p {
+    font-size: 0.4rem;
+    max-width: 300px;
+  }
+
+  /* Pricing */
+  .pricing-section {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+
+  .pricing-section h1 {
+    font-size: 1rem;
+  }
+
+  .pricing-card-container {
+    max-width: 100%;
+  }
+
+  .pricing-card {
+    max-width: 8rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 1rem;
+    border-radius: 1rem;
+  }
+
+  .pricing-card:hover {
+    transform: scale(0.5)translateY(-10px);
+  }
+
+  .pricing-card .title {
+    font-size: 0.75rem;
+  }
+
+  .pricing-card .price {
+    font-size: 0.5rem;
+    margin: 8px 0;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.25rem 0;
+    border-radius: 0.25rem;
+    border: 3px solid transparent;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+  }
 }
